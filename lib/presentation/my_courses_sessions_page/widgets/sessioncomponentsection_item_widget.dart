@@ -66,18 +66,15 @@ class SessioncomponentsectionItemWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 7.v),
-          SizedBox(
-            width: 177.h,
-            child: Text(
-              sessioncomponentsectionItemModelObj.descriptionText!,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                color: appTheme.blueGray90001.withOpacity(0.6),
-                fontSize: 16.fSize,
-                fontFamily: 'Nunito Sans',
-                fontWeight: FontWeight.w300,
-              ),
+          Text(
+            sessioncomponentsectionItemModelObj.descriptionText!,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              color: appTheme.blueGray90001.withOpacity(0.6),
+              fontSize: 16.fSize,
+              fontFamily: 'Nunito Sans',
+              fontWeight: FontWeight.w300,
             ),
           ),
           SizedBox(height: 2.v),

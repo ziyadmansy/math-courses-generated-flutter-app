@@ -117,6 +117,12 @@ class AppNavigationScreenState extends State<AppNavigationScreen> {
                         ),
                         _buildScreenTitle(
                           context,
+                          screenTitle: 'My Sessions',
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(AppRoutes.myCoursesSessionsPage),
+                        ),
+                        _buildScreenTitle(
+                          context,
                           screenTitle: "notifications_requests".tr,
                           onTapScreenTitle: () => onTapScreenTitle(
                               AppRoutes.notificationsRequestsScreen),

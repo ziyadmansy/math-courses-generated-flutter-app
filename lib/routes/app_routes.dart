@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_courses/presentation/my_courses_sessions_page/my_courses_sessions_page.dart';
 import 'package:math_courses/presentation/profile_finished_courses_page/profile_finished_courses_page.dart';
 import 'package:math_courses/presentation/splash_screen/splash_screen.dart';
 import 'package:math_courses/presentation/welcome_screen/welcome_screen.dart';
@@ -89,6 +90,7 @@ class AppRoutes {
         profileContactsScreen: ProfileContactsScreen.builder,
         homeScreen: HomeScreen.builder,
         myCoursesScreen: MyCoursesScreen.builder,
+        myCoursesSessionsPage: MyCoursesSessionsPage.builder,
         notificationsRequestsScreen: NotificationsRequestsScreen.builder,
         headquarterChatScreen: HeadquarterChatScreen.builder,
         newMessageScreen: NewMessageScreen.builder,

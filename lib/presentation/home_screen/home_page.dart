@@ -530,7 +530,7 @@ class _HomepageState extends State<Homepage> {
   /// Navigates to the myCoursesScreen when the action is triggered.
   onTapTxtViewAll1(BuildContext context) {
     NavigatorService.pushNamed(
-      AppRoutes.myCoursesScreen,
+      AppRoutes.myCoursesSessionsPage,
     );
   }
 }

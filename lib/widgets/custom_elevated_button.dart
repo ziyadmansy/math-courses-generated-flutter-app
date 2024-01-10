@@ -5,7 +5,6 @@ import 'package:math_courses/widgets/base_button.dart';
 class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({
     Key? key,
-    this.decoration,
     this.leftIcon,
     this.rightIcon,
     EdgeInsets? margin,
@@ -29,8 +28,6 @@ class CustomElevatedButton extends BaseButton {
           margin: margin,
         );
 
-  final BoxDecoration? decoration;
-
   final Widget? leftIcon;
 
   final Widget? rightIcon;
@@ -49,7 +46,6 @@ class CustomElevatedButton extends BaseButton {
         height: this.height ?? 42.v,
         width: this.width ?? double.maxFinite,
         margin: margin,
-        decoration: decoration,
         child: ElevatedButton(
           style: buttonStyle,
           onPressed: isDisabled ?? false ? null : onPressed ?? () {},
@@ -60,7 +56,9 @@ class CustomElevatedButton extends BaseButton {
               leftIcon ?? const SizedBox.shrink(),
               Text(
                 text,
-                style: buttonTextStyle,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

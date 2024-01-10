@@ -60,35 +60,41 @@ class WelcomeScreenState extends State<WelcomeScreen> {
   /// Section Widget
   Widget _buildLoginSection(BuildContext context) {
     return Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 60.h, vertical: 40.v),
-            decoration: AppDecoration.outlinePrimary
-                .copyWith(borderRadius: BorderRadiusStyle.customBorderTL50),
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              Text("lbl_welcome_back".tr,
-                  style: TextStyle(
-                      color: appTheme.blueGray900,
-                      fontSize: 45.fSize,
-                      fontFamily: 'Nunito Sans',
-                      fontWeight: FontWeight.w700)),
-              SizedBox(height: 9.v),
-              Text("msg_login_into_your".tr,
-                  style: TextStyle(
-                      color: appTheme.blueGray90001,
-                      fontSize: 24.fSize,
-                      fontFamily: 'Nunito Sans',
-                      fontWeight: FontWeight.w400)),
-              SizedBox(height: 54.v),
-              CustomElevatedButton(
-                  height: 67.v,
-                  text: "lbl_login".tr,
-                  buttonStyle: CustomButtonStyles.outlinePrimary,
-                  onPressed: () {
-                    onTapLogin(context);
-                  }),
-              SizedBox(height: 43.v)
-            ])));
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 60.h, vertical: 40.v),
+        decoration: AppDecoration.outlinePrimary
+            .copyWith(borderRadius: BorderRadiusStyle.customBorderTL50),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text("lbl_welcome_back".tr,
+                style: TextStyle(
+                    color: appTheme.blueGray900,
+                    fontSize: 45.fSize,
+                    fontFamily: 'Nunito Sans',
+                    fontWeight: FontWeight.w700)),
+            SizedBox(height: 9.v),
+            Text("msg_login_into_your".tr,
+                style: TextStyle(
+                    color: appTheme.blueGray90001,
+                    fontSize: 24.fSize,
+                    fontFamily: 'Nunito Sans',
+                    fontWeight: FontWeight.w400)),
+            SizedBox(height: 54.v),
+            CustomElevatedButton(
+              height: 67.v,
+              text: "lbl_login".tr,
+              // buttonStyle: CustomButtonStyles.outlinePrimary,
+              onPressed: () {
+                onTapLogin(context);
+              },
+            ),
+            SizedBox(height: 43.v)
+          ],
+        ),
+      ),
+    );
   }
 
   /// Navigates to the loginScreen when the action is triggered.

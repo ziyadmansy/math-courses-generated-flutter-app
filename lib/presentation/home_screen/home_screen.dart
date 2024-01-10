@@ -30,6 +30,7 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -44,19 +45,20 @@ class HomeScreenState extends State<HomeScreen> {
                       alignment: Alignment.center),
                   SingleChildScrollView(
                       child: Column(children: [
-                        _buildWelcomeSection(context),
-                        SizedBox(height: 223.v),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgRectangle119,
-                            height: 99.v,
-                            width: 418.h)
-                      ]))
+                    _buildWelcomeSection(context),
+                    SizedBox(height: 223.v),
+                    CustomImageView(
+                        imagePath: ImageConstant.imgRectangle119,
+                        height: 99.v,
+                        width: 418.h)
+                  ]))
                 ])),
             bottomNavigationBar: _buildBottomBarSection(context)));
   }
 
   /// Section Widget
   Widget _buildWelcomeSection(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.only(left: 3.h),
@@ -83,17 +85,17 @@ class HomeScreenState extends State<HomeScreen> {
                                                   horizontal: 11.h),
                                               child: Row(
                                                   mainAxisAlignment:
-                                                  MainAxisAlignment.center,
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Padding(
                                                         padding:
-                                                        EdgeInsets.only(
-                                                            top: 5.v,
-                                                            bottom: 1.v),
+                                                            EdgeInsets.only(
+                                                                top: 5.v,
+                                                                bottom: 1.v),
                                                         child: Column(
                                                             crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
+                                                                CrossAxisAlignment
+                                                                    .start,
                                                             children: [
                                                               Text(
                                                                   "lbl_welcome"
@@ -102,19 +104,19 @@ class HomeScreenState extends State<HomeScreen> {
                                                                       color: appTheme
                                                                           .blueGray90001
                                                                           .withOpacity(
-                                                                          0.8),
+                                                                              0.8),
                                                                       fontSize: 16
                                                                           .fSize,
                                                                       fontFamily:
-                                                                      'Nunito Sans',
+                                                                          'Nunito Sans',
                                                                       fontWeight:
-                                                                      FontWeight
-                                                                          .w400)),
+                                                                          FontWeight
+                                                                              .w400)),
                                                               Padding(
                                                                   padding: EdgeInsets
                                                                       .only(
-                                                                      left: 3
-                                                                          .h),
+                                                                          left: 3
+                                                                              .h),
                                                                   child: Text(
                                                                       "lbl_mohamed_ali"
                                                                           .tr,
@@ -124,9 +126,9 @@ class HomeScreenState extends State<HomeScreen> {
                                                                           fontSize: 16
                                                                               .fSize,
                                                                           fontFamily:
-                                                                          'Nunito Sans',
+                                                                              'Nunito Sans',
                                                                           fontWeight:
-                                                                          FontWeight.w700)))
+                                                                              FontWeight.w700)))
                                                             ])),
                                                     CustomImageView(
                                                         imagePath: ImageConstant
@@ -147,45 +149,45 @@ class HomeScreenState extends State<HomeScreen> {
                                               padding: EdgeInsets.only(
                                                   left: 14.h, right: 12.h),
                                               child: Selector<HomeProvider,
-                                                  TextEditingController?>(
+                                                      TextEditingController?>(
                                                   selector: (context,
-                                                      provider) =>
-                                                  provider.searchController,
+                                                          provider) =>
+                                                      provider.searchController,
                                                   builder: (context,
                                                       searchController, child) {
                                                     return CustomSearchView(
                                                         controller:
-                                                        searchController,
+                                                            searchController,
                                                         hintText:
-                                                        "lbl_search_courses"
-                                                            .tr,
+                                                            "lbl_search_courses"
+                                                                .tr,
                                                         borderDecoration:
-                                                        SearchViewStyleHelper
-                                                            .fillGray);
+                                                            SearchViewStyleHelper
+                                                                .fillGray);
                                                   })),
                                           SizedBox(height: 39.v),
                                           Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                                  MainAxisAlignment.center,
                                               children: [
                                                 Text("msg_available_courses".tr,
                                                     style: TextStyle(
                                                         color: appTheme.red900,
                                                         fontSize: 32.fSize,
                                                         fontFamily:
-                                                        'Nunito Sans',
+                                                            'Nunito Sans',
                                                         fontWeight:
-                                                        FontWeight.w700)),
+                                                            FontWeight.w700)),
                                                 GestureDetector(
                                                     onTap: () {
                                                       onTapTxtViewAll(context);
                                                     },
                                                     child: Padding(
                                                         padding:
-                                                        EdgeInsets.only(
-                                                            left: 31.h,
-                                                            top: 12.v,
-                                                            bottom: 6.v),
+                                                            EdgeInsets.only(
+                                                                left: 31.h,
+                                                                top: 12.v,
+                                                                bottom: 6.v),
                                                         child: Text(
                                                             "lbl_view_all".tr,
                                                             style: TextStyle(
@@ -193,39 +195,41 @@ class HomeScreenState extends State<HomeScreen> {
                                                                     .colorScheme
                                                                     .primary
                                                                     .withOpacity(
-                                                                    0.6),
+                                                                        0.6),
                                                                 fontSize:
-                                                                18.fSize,
+                                                                    18.fSize,
                                                                 fontFamily:
-                                                                'Nunito Sans',
+                                                                    'Nunito Sans',
                                                                 fontWeight:
-                                                                FontWeight
-                                                                    .w700))))
+                                                                    FontWeight
+                                                                        .w700))))
                                               ])
                                         ]))),
                             Align(
                                 alignment: Alignment.topLeft,
                                 child: Container(
+                                    width: size.width / 1.5,
                                     margin:
-                                    EdgeInsets.only(left: 20.h, top: 253.v),
+                                        EdgeInsets.only(left: 20.h, top: 253.v),
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 24.h, vertical: 27.v),
                                     decoration: AppDecoration.outlinePrimary1
                                         .copyWith(
-                                        borderRadius: BorderRadiusStyle
-                                            .roundedBorder50),
+                                            borderRadius: BorderRadiusStyle
+                                                .roundedBorder50),
                                     child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         children: [
                                           Align(
                                               alignment: Alignment.centerRight,
                                               child: Row(
                                                   mainAxisAlignment:
-                                                  MainAxisAlignment.end,
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                   children: [
                                                     Text("lbl_est".tr,
                                                         style: TextStyle(
@@ -233,20 +237,20 @@ class HomeScreenState extends State<HomeScreen> {
                                                                 .blueGray90001,
                                                             fontSize: 26.fSize,
                                                             fontFamily:
-                                                            'Nunito Sans',
+                                                                'Nunito Sans',
                                                             fontWeight:
-                                                            FontWeight
-                                                                .w600)),
+                                                                FontWeight
+                                                                    .w600)),
                                                     CustomElevatedButton(
                                                         height: 33.v,
                                                         width: 112.h,
                                                         text:
-                                                        "lbl_subscribe".tr,
+                                                            "lbl_subscribe".tr,
                                                         margin: EdgeInsets.only(
                                                             left: 33.h),
                                                         buttonStyle:
-                                                        CustomButtonStyles
-                                                            .fillAmber,
+                                                            CustomButtonStyles
+                                                                .fillAmber,
                                                         onPressed: () {
                                                           onTapSubscribe(
                                                               context);
@@ -254,14 +258,13 @@ class HomeScreenState extends State<HomeScreen> {
                                                   ])),
                                           SizedBox(height: 24.v),
                                           Container(
-                                              width: 177.h,
                                               margin:
-                                              EdgeInsets.only(left: 8.h),
+                                                  EdgeInsets.only(left: 8.h),
                                               child: Text(
                                                   "msg_here_you_will_be2".tr,
                                                   maxLines: 2,
                                                   overflow:
-                                                  TextOverflow.ellipsis,
+                                                      TextOverflow.ellipsis,
                                                   style: TextStyle(
                                                       color: appTheme
                                                           .blueGray90001
@@ -269,7 +272,7 @@ class HomeScreenState extends State<HomeScreen> {
                                                       fontSize: 16.fSize,
                                                       fontFamily: 'Nunito Sans',
                                                       fontWeight:
-                                                      FontWeight.w300))),
+                                                          FontWeight.w300))),
                                           SizedBox(height: 2.v)
                                         ]))),
                             Align(
@@ -279,20 +282,20 @@ class HomeScreenState extends State<HomeScreen> {
                                         left: 20.h, top: 515.v, bottom: 147.v),
                                     child: Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           SizedBox(
                                               height: 177.v,
-                                              width: 273.h,
+                                              width: size.width / 1.5,
                                               child: Stack(
                                                   alignment:
-                                                  Alignment.topCenter,
+                                                      Alignment.topCenter,
                                                   children: [
                                                     Align(
                                                         alignment:
-                                                        Alignment.center,
+                                                            Alignment.center,
                                                         child: Container(
                                                             height: 177.v,
                                                             width: 273.h,
@@ -300,49 +303,50 @@ class HomeScreenState extends State<HomeScreen> {
                                                                 color: appTheme
                                                                     .gray50,
                                                                 borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                    50.h),
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            50.h),
                                                                 boxShadow: [
                                                                   BoxShadow(
                                                                       color: theme
                                                                           .colorScheme
                                                                           .primary
                                                                           .withOpacity(
-                                                                          0.15),
+                                                                              0.15),
                                                                       spreadRadius:
-                                                                      2.h,
+                                                                          2.h,
                                                                       blurRadius:
-                                                                      2.h,
+                                                                          2.h,
                                                                       offset:
-                                                                      Offset(
-                                                                          2,
-                                                                          2))
+                                                                          Offset(
+                                                                              2,
+                                                                              2))
                                                                 ]))),
                                                     Align(
                                                         alignment:
-                                                        Alignment.topCenter,
+                                                            Alignment.topCenter,
                                                         child: Padding(
                                                             padding:
-                                                            EdgeInsets.only(
-                                                                left: 14.h,
-                                                                top: 29.v,
-                                                                right:
-                                                                18.h),
+                                                                EdgeInsets.only(
+                                                                    left: 14.h,
+                                                                    top: 29.v,
+                                                                    right:
+                                                                        18.h),
                                                             child: Column(
                                                                 mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
+                                                                    MainAxisSize
+                                                                        .min,
                                                                 crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
+                                                                    CrossAxisAlignment
+                                                                        .start,
                                                                 children: [
                                                                   SizedBox(
-                                                                      width:
-                                                                      241.h,
+                                                                      width: size
+                                                                              .width /
+                                                                          1.5,
                                                                       child: Row(
                                                                           mainAxisAlignment:
-                                                                          MainAxisAlignment.spaceBetween,
+                                                                              MainAxisAlignment.spaceBetween,
                                                                           children: [
                                                                             Text("lbl_algebra_101".tr,
                                                                                 style: TextStyle(color: appTheme.blueGray90001, fontSize: 26.fSize, fontFamily: 'Nunito Sans', fontWeight: FontWeight.w600)),
@@ -358,10 +362,10 @@ class HomeScreenState extends State<HomeScreen> {
                                                                           ])),
                                                                   SizedBox(
                                                                       height:
-                                                                      27.v),
+                                                                          27.v),
                                                                   Container(
                                                                       width:
-                                                                      177.h,
+                                                                          177.h,
                                                                       margin: EdgeInsets.only(
                                                                           left: 8
                                                                               .h),
@@ -369,7 +373,7 @@ class HomeScreenState extends State<HomeScreen> {
                                                                           "msg_here_you_will_be2"
                                                                               .tr,
                                                                           maxLines:
-                                                                          2,
+                                                                              2,
                                                                           overflow: TextOverflow
                                                                               .ellipsis,
                                                                           style: TextStyle(
@@ -379,50 +383,6 @@ class HomeScreenState extends State<HomeScreen> {
                                                                               fontWeight: FontWeight.w300)))
                                                                 ])))
                                                   ])),
-                                          Padding(
-                                              padding: EdgeInsets.only(
-                                                  top: 28.v, bottom: 40.v),
-                                              child: Column(
-                                                  crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text("lbl_algebra_101".tr,
-                                                        textAlign:
-                                                        TextAlign.center,
-                                                        style: TextStyle(
-                                                            color: appTheme
-                                                                .blueGray90001,
-                                                            fontSize: 26.fSize,
-                                                            fontFamily:
-                                                            'Nunito Sans',
-                                                            fontWeight:
-                                                            FontWeight
-                                                                .w600)),
-                                                    SizedBox(height: 28.v),
-                                                    Container(
-                                                        width: 183.h,
-                                                        margin: EdgeInsets.only(
-                                                            left: 4.h),
-                                                        child: Text(
-                                                            "msg_here_you_will_be2"
-                                                                .tr,
-                                                            maxLines: 2,
-                                                            overflow:
-                                                            TextOverflow
-                                                                .ellipsis,
-                                                            style: TextStyle(
-                                                                color: appTheme
-                                                                    .blueGray90001
-                                                                    .withOpacity(
-                                                                    0.6),
-                                                                fontSize:
-                                                                16.fSize,
-                                                                fontFamily:
-                                                                'Nunito Sans',
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w300)))
-                                                  ]))
                                         ]))),
                             Align(
                                 alignment: Alignment.bottomCenter,
@@ -431,7 +391,7 @@ class HomeScreenState extends State<HomeScreen> {
                                         27.h, 455.v, 36.h, 339.v),
                                     child: Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text("lbl_my_courses".tr,
                                               style: TextStyle(
@@ -454,98 +414,115 @@ class HomeScreenState extends State<HomeScreen> {
                                                               .withOpacity(0.6),
                                                           fontSize: 18.fSize,
                                                           fontFamily:
-                                                          'Nunito Sans',
+                                                              'Nunito Sans',
                                                           fontWeight: FontWeight
                                                               .w700))))
                                         ]))),
-                            Align(
-                                alignment: Alignment.bottomRight,
-                                child: Padding(
-                                    padding: EdgeInsets.only(right: 73.h),
-                                    child: Text("lbl_8_12_sessions".tr,
-                                        style: TextStyle(
-                                            color: appTheme.blueGray90001
-                                                .withOpacity(0.6),
-                                            fontSize: 12.fSize,
-                                            fontFamily: 'Nunito Sans',
-                                            fontWeight: FontWeight.w400)))),
+                            // Align(
+                            //     alignment: Alignment.bottomRight,
+                            //     child: Padding(
+                            //         padding: EdgeInsets.only(right: 73.h),
+                            //         child: Text("lbl_8_12_sessions".tr,
+                            //             style: TextStyle(
+                            //                 color: appTheme.blueGray90001
+                            //                     .withOpacity(0.6),
+                            //                 fontSize: 12.fSize,
+                            //                 fontFamily: 'Nunito Sans',
+                            //                 fontWeight: FontWeight.w400)))),
                             CustomImageView(
                                 imagePath: ImageConstant.imgUser,
                                 height: 79.v,
                                 width: 58.h,
                                 alignment: Alignment.bottomLeft,
                                 margin: EdgeInsets.only(bottom: 44.v)),
-                            Align(
-                                alignment: Alignment.topRight,
-                                child: Container(
-                                    margin: EdgeInsets.only(top: 253.v),
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 26.h, vertical: 22.v),
-                                    decoration: AppDecoration.outlinePrimary1
-                                        .copyWith(
-                                        borderRadius: BorderRadiusStyle
-                                            .roundedBorder50),
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                              padding:
-                                              EdgeInsets.only(left: 16.h),
-                                              child: Text("lbl_calculus".tr,
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                      color: appTheme
-                                                          .blueGray90001,
-                                                      fontSize: 26.fSize,
-                                                      fontFamily: 'Nunito Sans',
-                                                      fontWeight:
-                                                      FontWeight.w600))),
-                                          SizedBox(height: 29.v),
-                                          Align(
-                                              alignment: Alignment.centerRight,
-                                              child: SizedBox(
-                                                  width: 183.h,
-                                                  child: Text(
-                                                      "msg_here_you_will_be2"
-                                                          .tr,
-                                                      maxLines: 2,
-                                                      overflow:
-                                                      TextOverflow.ellipsis,
-                                                      style: TextStyle(
-                                                          color: appTheme
-                                                              .blueGray90001
-                                                              .withOpacity(0.6),
-                                                          fontSize: 16.fSize,
-                                                          fontFamily:
-                                                          'Nunito Sans',
-                                                          fontWeight: FontWeight
-                                                              .w300)))),
-                                          SizedBox(height: 8.v)
-                                        ])))
+                            // Align(
+                            //     alignment: Alignment.topLeft,
+                            //     child: Container(
+                            //         margin: EdgeInsets.only(top: 253.v),
+                            //         padding: EdgeInsets.symmetric(
+                            //             horizontal: 26.h, vertical: 22.v),
+                            //         decoration: AppDecoration.outlinePrimary1
+                            //             .copyWith(
+                            //                 borderRadius: BorderRadiusStyle
+                            //                     .roundedBorder50),
+                            //         child: Column(
+                            //             mainAxisSize: MainAxisSize.min,
+                            //             crossAxisAlignment:
+                            //                 CrossAxisAlignment.start,
+                            //             children: [
+                            //               SizedBox(
+                            //                   width: 241.h,
+                            //                   child: Row(
+                            //                       mainAxisAlignment:
+                            //                           MainAxisAlignment
+                            //                               .spaceBetween,
+                            //                       children: [
+                            //                         Text("lbl_calculus".tr,
+                            //                             style: TextStyle(
+                            //                                 color: appTheme
+                            //                                     .blueGray90001,
+                            //                                 fontSize: 26.fSize,
+                            //                                 fontFamily:
+                            //                                     'Nunito Sans',
+                            //                                 fontWeight:
+                            //                                     FontWeight
+                            //                                         .w600)),
+                            //                         CustomElevatedButton(
+                            //                             height: 33.v,
+                            //                             width: 80.h,
+                            //                             text:
+                            //                                 "lbl_subscribe".tr,
+                            //                             margin: EdgeInsets.only(
+                            //                                 left: 33.h),
+                            //                             buttonStyle:
+                            //                                 CustomButtonStyles
+                            //                                     .fillAmber,
+                            //                             onPressed: () {
+                            //                               onTapSubscribe(
+                            //                                   context);
+                            //                             })
+                            //                       ])),
+                            //               SizedBox(height: 27.v),
+                            //               Container(
+                            //                   width: 177.h,
+                            //                   margin:
+                            //                       EdgeInsets.only(left: 8.h),
+                            //                   child: Text(
+                            //                       "msg_here_you_will_be2".tr,
+                            //                       maxLines: 2,
+                            //                       overflow:
+                            //                           TextOverflow.ellipsis,
+                            //                       style: TextStyle(
+                            //                           color: appTheme
+                            //                               .blueGray90001
+                            //                               .withOpacity(0.6),
+                            //                           fontSize: 16.fSize,
+                            //                           fontFamily: 'Nunito Sans',
+                            //                           fontWeight:
+                            //                               FontWeight.w300)))
+                            //             ])))
                           ]))),
-                  CustomImageView(
-                      imagePath: ImageConstant.imgRectangle15,
-                      height: 177.v,
-                      width: 108.h,
-                      alignment: Alignment.bottomRight,
-                      margin: EdgeInsets.only(bottom: 147.v))
+                  // CustomImageView(
+                  //     imagePath: ImageConstant.imgRectangle15,
+                  //     height: 177.v,
+                  //     width: 108.h,
+                  //     alignment: Alignment.bottomRight,
+                  //     margin: EdgeInsets.only(bottom: 147.v))
                 ]))));
   }
 
   /// Section Widget
   Widget _buildBottomBarSection(BuildContext context) {
     return CustomBottomBar(onChanged: (BottomBarEnum type) {
-      if(type == BottomBarEnum.Notifications) {
+      if (type == BottomBarEnum.Notifications) {
         NavigatorService.pushNamed(
           AppRoutes.notificationsPage,
         );
-      } else if(type == BottomBarEnum.Mycourses) {
+      } else if (type == BottomBarEnum.Mycourses) {
         NavigatorService.pushNamed(
           AppRoutes.myCoursesScreen,
         );
-      } else if(type == BottomBarEnum.Profile) {
+      } else if (type == BottomBarEnum.Profile) {
         NavigatorService.pushNamed(
           AppRoutes.profileFinishedCoursesPage,
         );
@@ -572,11 +549,11 @@ class HomeScreenState extends State<HomeScreen> {
     showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          content: CoursesDialog.builder(context),
-          backgroundColor: Colors.transparent,
-          contentPadding: EdgeInsets.zero,
-          insetPadding: const EdgeInsets.only(left: 0),
-        ));
+              content: CoursesDialog.builder(context),
+              backgroundColor: Colors.transparent,
+              contentPadding: EdgeInsets.zero,
+              insetPadding: const EdgeInsets.only(left: 0),
+            ));
   }
 
   onTapContinue(BuildContext context) {

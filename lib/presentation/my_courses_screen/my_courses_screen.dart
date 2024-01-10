@@ -34,52 +34,46 @@ class MyCoursesScreenState extends State<MyCoursesScreen> {
             width: SizeUtils.width,
             child: SingleChildScrollView(
                 child: Column(children: [
-              SizedBox(
-                  height: SizeUtils.height,
-                  width: double.maxFinite,
-                  child: Stack(alignment: Alignment.topRight, children: [
-                    Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 24.h, vertical: 33.v),
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image:
-                                        AssetImage(ImageConstant.imgGroup164),
-                                    fit: BoxFit.cover)),
-                            child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  _buildWelcomeSection(context),
-                                  SizedBox(height: 35.v),
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.only(left: 26.h),
-                                          child: Text("lbl_my_courses".tr,
-                                              style: TextStyle(
-                                                  color: appTheme.red900,
-                                                  fontSize: 32.fSize,
-                                                  fontFamily: 'Nunito Sans',
-                                                  fontWeight:
-                                                      FontWeight.w700)))),
-                                  SizedBox(height: 38.v),
-                                  _buildAlgebraCounterSection(context),
-                                  SizedBox(height: 25.v),
-                                  _buildAlgebraCounterSection2(context),
-                                  SizedBox(height: 28.v),
-                                  _buildStartSection(context),
-                                  SizedBox(height: 28.v),
-                                  _buildStartSection2(context)
-                                ]))),
-                    CustomImageView(
-                        imagePath: ImageConstant.imgUserRed90003,
-                        height: 93.v,
-                        width: 77.h,
-                        alignment: Alignment.topRight,
-                        margin: EdgeInsets.only(top: 123.v))
-                  ])),
+              Stack(alignment: Alignment.topRight, children: [
+                Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 24.h, vertical: 33.v),
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(ImageConstant.imgGroup164),
+                                fit: BoxFit.cover)),
+                        child:
+                            Column(mainAxisSize: MainAxisSize.min, children: [
+                          _buildWelcomeSection(context),
+                          SizedBox(height: 35.v),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                  padding: EdgeInsets.only(left: 26.h),
+                                  child: Text("lbl_my_courses".tr,
+                                      style: TextStyle(
+                                          color: appTheme.red900,
+                                          fontSize: 32.fSize,
+                                          fontFamily: 'Nunito Sans',
+                                          fontWeight: FontWeight.w700)))),
+                          SizedBox(height: 38.v),
+                          _buildAlgebraCounterSection(context),
+                          SizedBox(height: 25.v),
+                          _buildAlgebraCounterSection2(context),
+                          SizedBox(height: 28.v),
+                          _buildStartSection(context),
+                          SizedBox(height: 28.v),
+                          _buildStartSection2(context)
+                        ]))),
+                CustomImageView(
+                    imagePath: ImageConstant.imgUserRed90003,
+                    height: 93.v,
+                    width: 77.h,
+                    alignment: Alignment.topRight,
+                    margin: EdgeInsets.only(top: 123.v))
+              ]),
               SizedBox(height: 165.v),
               CustomImageView(
                   imagePath: ImageConstant.imgRectangle1110,
@@ -359,9 +353,7 @@ class MyCoursesScreenState extends State<MyCoursesScreen> {
                   child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                            width: 177.h,
-                            margin: EdgeInsets.only(bottom: 6.v),
+                        Expanded(
                             child: Text("msg_here_you_will_be2".tr,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,

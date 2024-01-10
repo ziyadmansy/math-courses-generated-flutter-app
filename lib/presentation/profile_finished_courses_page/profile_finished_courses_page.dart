@@ -18,10 +18,7 @@ class ProfileFinishedCoursesPage extends StatefulWidget {
   ProfileFinishedCoursesPageState createState() =>
       ProfileFinishedCoursesPageState();
   static Widget builder(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ProfileFinishedCoursesProvider(),
-      child: ProfileFinishedCoursesPage(),
-    );
+    return ProfileFinishedCoursesPage();
   }
 }
 

@@ -40,12 +40,6 @@ class CoursesDialogState extends State<CoursesDialog> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CustomImageView(
-            imagePath: ImageConstant.imgCloseFill0WghPrimary,
-            height: 24.adaptSize,
-            width: 24.adaptSize,
-            alignment: Alignment.centerRight,
-          ),
           SizedBox(height: 21.v),
           Container(
             width: 283.h,

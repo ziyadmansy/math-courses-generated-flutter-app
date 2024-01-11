@@ -31,149 +31,124 @@ class VideoPageOneScreenState extends State<VideoPageOneScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SizedBox(
-                width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    child: Column(children: [
-                  SizedBox(
-                      height: SizeUtils.height,
-                      width: double.maxFinite,
-                      child: Stack(alignment: Alignment.topRight, children: [
-                        Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 4.h, vertical: 34.v),
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            ImageConstant.imgGroup164),
-                                        fit: BoxFit.cover)),
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      _buildWelcomeSection(context),
-                                      SizedBox(height: 31.v),
-                                      Padding(
-                                          padding: EdgeInsets.only(left: 26.h),
-                                          child: Row(children: [
-                                            Container(
+      body: SingleChildScrollView(
+          child: Column(children: [
+        Stack(alignment: Alignment.topRight, children: [
+          Align(
+              alignment: Alignment.center,
+              child: Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 4.h, vertical: 34.v),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(ImageConstant.imgGroup164),
+                          fit: BoxFit.cover)),
+                  child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildWelcomeSection(context),
+                        SizedBox(height: 31.v),
+                        Padding(
+                            padding: EdgeInsets.only(left: 26.h),
+                            child: Row(children: [
+                              Container(
+                                  height: 30.v,
+                                  width: 35.h,
+                                  margin: EdgeInsets.symmetric(vertical: 7.v),
+                                  child: Stack(
+                                      alignment: Alignment.centerRight,
+                                      children: [
+                                        Align(
+                                            alignment: Alignment.center,
+                                            child: Container(
                                                 height: 30.v,
                                                 width: 35.h,
-                                                margin: EdgeInsets.symmetric(
-                                                    vertical: 7.v),
-                                                child: Stack(
-                                                    alignment:
-                                                        Alignment.centerRight,
-                                                    children: [
-                                                      Align(
-                                                          alignment:
-                                                              Alignment.center,
-                                                          child: Container(
-                                                              height: 30.v,
-                                                              width: 35.h,
-                                                              decoration: BoxDecoration(
-                                                                  color: appTheme
-                                                                      .blueGray10001
-                                                                      .withOpacity(
-                                                                          0.5),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              17.h)))),
-                                                      CustomImageView(
-                                                          imagePath:
-                                                              ImageConstant
-                                                                  .imgArrowLeft,
-                                                          height: 18.v,
-                                                          width: 19.h,
-                                                          alignment: Alignment
-                                                              .centerRight,
-                                                          margin:
-                                                              EdgeInsets.only(
-                                                                  right: 7.h),
-                                                          onTap: () {
-                                                            onTapImgArrowLeft(
-                                                                context);
-                                                          })
-                                                    ])),
-                                            Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 33.h),
-                                                child: Text("lbl_video".tr,
-                                                    style: TextStyle(
-                                                        color: appTheme.red900,
-                                                        fontSize: 32.fSize,
-                                                        fontFamily:
-                                                            'Nunito Sans',
-                                                        fontWeight:
-                                                            FontWeight.w700)))
-                                          ])),
-                                      SizedBox(height: 31.v),
-                                      _buildVideoSection(context),
-                                      SizedBox(height: 66.v),
-                                      _buildHereYouWillBeSection(context),
-                                      SizedBox(height: 25.v),
-                                      _buildHereYouWillBeSection2(context),
-                                      SizedBox(height: 25.v),
-                                      _buildHereYouWillBeSection3(context),
-                                      SizedBox(height: 39.v),
-                                      CustomElevatedButton(
-                                          width: 107.h,
-                                          text: "lbl_next".tr,
-                                          margin: EdgeInsets.only(right: 30.h),
-                                          rightIcon: Container(
-                                              margin:
-                                                  EdgeInsets.only(left: 5.h),
-                                              child: CustomImageView(
-                                                  imagePath: ImageConstant
-                                                      .imgArrowrightOnerror,
-                                                  height: 18.v,
-                                                  width: 19.h)),
-                                          onPressed: () {
-                                            onTapNext(context);
-                                          },
-                                          alignment: Alignment.centerRight),
-                                      SizedBox(height: 55.v),
-                                      Align(
-                                          alignment: Alignment.centerRight,
-                                          child: Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 69.h),
-                                              child: Text(
-                                                  "lbl_8_12_sessions".tr,
-                                                  style: TextStyle(
-                                                      color: appTheme
-                                                          .blueGray90001
-                                                          .withOpacity(0.6),
-                                                      fontSize: 12.fSize,
-                                                      fontFamily: 'Nunito Sans',
-                                                      fontWeight:
-                                                          FontWeight.w400)))),
-                                      SizedBox(height: 24.v)
-                                    ]))),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgComponent3Red90002,
-                            height: 96.v,
-                            width: 77.h,
-                            alignment: Alignment.topRight,
-                            margin: EdgeInsets.only(right: 138.h)),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgPlus,
-                            height: 104.v,
-                            width: 102.h,
-                            alignment: Alignment.bottomLeft,
-                            margin: EdgeInsets.only(bottom: 82.v))
-                      ])),
-                  SizedBox(height: 165.v),
-                  CustomImageView(
-                      imagePath: ImageConstant.imgRectangle111,
-                      height: 99.v,
-                      width: 418.h)
-                ]))),
-            bottomNavigationBar: _buildBottomBarSection(context)));
+                                                decoration: BoxDecoration(
+                                                    color: appTheme
+                                                        .blueGray10001
+                                                        .withOpacity(0.5),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            17.h)))),
+                                        CustomImageView(
+                                            imagePath:
+                                                ImageConstant.imgArrowLeft,
+                                            height: 18.v,
+                                            width: 19.h,
+                                            alignment: Alignment.centerRight,
+                                            margin: EdgeInsets.only(right: 7.h),
+                                            onTap: () {
+                                              onTapImgArrowLeft(context);
+                                            })
+                                      ])),
+                              Padding(
+                                  padding: EdgeInsets.only(left: 33.h),
+                                  child: Text("lbl_video".tr,
+                                      style: TextStyle(
+                                          color: appTheme.red900,
+                                          fontSize: 32.fSize,
+                                          fontFamily: 'Nunito Sans',
+                                          fontWeight: FontWeight.w700)))
+                            ])),
+                        SizedBox(height: 31.v),
+                        _buildVideoSection(context),
+                        SizedBox(height: 66.v),
+                        _buildHereYouWillBeSection(context),
+                        SizedBox(height: 25.v),
+                        _buildHereYouWillBeSection2(context),
+                        SizedBox(height: 25.v),
+                        _buildHereYouWillBeSection3(context),
+                        SizedBox(height: 39.v),
+                        CustomElevatedButton(
+                            width: 107.h,
+                            text: "lbl_next".tr,
+                            margin: EdgeInsets.only(right: 30.h),
+                            rightIcon: Container(
+                                margin: EdgeInsets.only(left: 5.h),
+                                child: CustomImageView(
+                                    imagePath:
+                                        ImageConstant.imgArrowrightOnerror,
+                                    height: 18.v,
+                                    width: 19.h)),
+                            onPressed: () {
+                              onTapNext(context);
+                            },
+                            alignment: Alignment.centerRight),
+                        SizedBox(height: 55.v),
+                        Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                                padding: EdgeInsets.only(right: 69.h),
+                                child: Text("lbl_8_12_sessions".tr,
+                                    style: TextStyle(
+                                        color: appTheme.blueGray90001
+                                            .withOpacity(0.6),
+                                        fontSize: 12.fSize,
+                                        fontFamily: 'Nunito Sans',
+                                        fontWeight: FontWeight.w400)))),
+                        SizedBox(height: 24.v)
+                      ]))),
+          CustomImageView(
+              imagePath: ImageConstant.imgComponent3Red90002,
+              height: 96.v,
+              width: 77.h,
+              alignment: Alignment.topRight,
+              margin: EdgeInsets.only(right: 138.h)),
+          CustomImageView(
+              imagePath: ImageConstant.imgPlus,
+              height: 104.v,
+              width: 102.h,
+              alignment: Alignment.bottomLeft,
+              margin: EdgeInsets.only(bottom: 82.v))
+        ]),
+        SizedBox(height: 165.v),
+        CustomImageView(
+            imagePath: ImageConstant.imgRectangle111,
+            height: 99.v,
+            width: 418.h)
+      ])),
+    ));
   }
 
   /// Section Widget
@@ -275,38 +250,30 @@ class VideoPageOneScreenState extends State<VideoPageOneScreen> {
                       child: Padding(
                           padding: EdgeInsets.only(top: 5.v),
                           child: Column(children: [
-                            Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.only(right: 9.h),
-                                    child: Row(children: [
-                                      Padding(
-                                          padding: EdgeInsets.only(top: 1.v),
-                                          child: Text(
-                                              "msg_here_you_will_be3".tr,
-                                              style: TextStyle(
-                                                  color: appTheme.blueGray90001
-                                                      .withOpacity(0.6),
-                                                  fontSize: 16.fSize,
-                                                  fontFamily: 'Nunito Sans',
-                                                  fontWeight:
-                                                      FontWeight.w400))),
-                                      Padding(
-                                          padding: EdgeInsets.only(left: 35.h),
-                                          child: Text("lbl_0_20".tr,
-                                              style: TextStyle(
-                                                  color: appTheme.blueGray90001
-                                                      .withOpacity(0.6),
-                                                  fontSize: 16.fSize,
-                                                  fontFamily: 'Nunito Sans',
-                                                  fontWeight: FontWeight.w300)))
-                                    ]))),
+                            Row(children: [
+                              Expanded(
+                                  child: Text("msg_here_you_will_be3".tr,
+                                      style: TextStyle(
+                                          color: appTheme.blueGray90001
+                                              .withOpacity(0.6),
+                                          fontSize: 16.fSize,
+                                          fontFamily: 'Nunito Sans',
+                                          fontWeight: FontWeight.w400))),
+                              Padding(
+                                  padding: EdgeInsets.only(left: 35.h),
+                                  child: Text("lbl_0_20".tr,
+                                      style: TextStyle(
+                                          color: appTheme.blueGray90001
+                                              .withOpacity(0.6),
+                                          fontSize: 16.fSize,
+                                          fontFamily: 'Nunito Sans',
+                                          fontWeight: FontWeight.w300)))
+                            ]),
                             SizedBox(height: 21.v),
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Padding(
-                                      padding: EdgeInsets.only(top: 1.v),
+                                  Expanded(
                                       child: Text("msg_here_you_will_be3".tr,
                                           style: TextStyle(
                                               color: appTheme.blueGray90001
@@ -357,8 +324,7 @@ class VideoPageOneScreenState extends State<VideoPageOneScreen> {
         child: Padding(
             padding: EdgeInsets.only(left: 28.h, right: 21.h),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 1.v),
+              Expanded(
                   child: Text("msg_here_you_will_be2".tr,
                       style: TextStyle(
                           color: appTheme.blueGray90001.withOpacity(0.6),
@@ -382,8 +348,7 @@ class VideoPageOneScreenState extends State<VideoPageOneScreen> {
         padding: EdgeInsets.only(left: 28.h, right: 48.h),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Padding(
-              padding: EdgeInsets.only(top: 1.v),
+          Expanded(
               child: Text("msg_here_you_will_be3".tr,
                   style: TextStyle(
                       color: appTheme.blueGray90001.withOpacity(0.6),
@@ -397,11 +362,6 @@ class VideoPageOneScreenState extends State<VideoPageOneScreen> {
                   fontFamily: 'Nunito Sans',
                   fontWeight: FontWeight.w300))
         ]));
-  }
-
-  /// Section Widget
-  Widget _buildBottomBarSection(BuildContext context) {
-    return CustomBottomBar(onChanged: (BottomBarEnum type) {});
   }
 
   /// Navigates to the previous screen.

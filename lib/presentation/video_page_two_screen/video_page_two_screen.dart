@@ -328,10 +328,9 @@ class VideoPageTwoScreenState extends State<VideoPageTwoScreen> {
     return Align(
         alignment: Alignment.center,
         child: Padding(
-            padding: EdgeInsets.only(left: 28.h, right: 21.h),
+            padding: EdgeInsets.only(left: 28.h, right: 25.h),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 1.v),
+              Expanded(
                   child: Text("msg_here_you_will_be2".tr,
                       style: TextStyle(
                           color: appTheme.blueGray90001.withOpacity(0.6),

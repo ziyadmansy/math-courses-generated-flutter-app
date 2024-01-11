@@ -31,172 +31,113 @@ class VideoPageTwoScreenState extends State<VideoPageTwoScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SizedBox(
-                width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    child: Column(children: [
-                  SizedBox(
-                      height: SizeUtils.height,
-                      width: double.maxFinite,
-                      child: Stack(alignment: Alignment.topRight, children: [
-                        Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 4.h, vertical: 34.v),
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            ImageConstant.imgGroup164),
-                                        fit: BoxFit.cover)),
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      _buildWelcomeSection(context),
-                                      SizedBox(height: 30.v),
-                                      Align(
-                                          alignment: Alignment.centerRight,
-                                          child: Padding(
-                                              padding:
-                                                  EdgeInsets.only(left: 28.h),
-                                              child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
+      body: SizedBox(
+          width: SizeUtils.width,
+          child: SingleChildScrollView(
+              child: Column(children: [
+            Stack(alignment: Alignment.topRight, children: [
+              Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 4.h, vertical: 34.v),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(ImageConstant.imgGroup164),
+                              fit: BoxFit.cover)),
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _buildWelcomeSection(context),
+                            SizedBox(height: 30.v),
+                            Align(
+                                alignment: Alignment.centerRight,
+                                child: Padding(
+                                    padding: EdgeInsets.only(left: 28.h),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          Expanded(
+                                              child: Column(
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
+                                                      CrossAxisAlignment.start,
                                                   children: [
-                                                    Expanded(
-                                                        child: Column(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                          Padding(
-                                                              padding: EdgeInsets
-                                                                  .only(
-                                                                      left:
-                                                                          8.h),
-                                                              child: Row(
-                                                                  children: [
-                                                                    Container(
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        left: 8.h),
+                                                    child: Row(children: [
+                                                      Container(
+                                                          height: 30.v,
+                                                          width: 35.h,
+                                                          margin:
+                                                              EdgeInsets.only(
+                                                                  top: 8.v,
+                                                                  bottom: 5.v),
+                                                          child: Stack(
+                                                              alignment: Alignment
+                                                                  .centerRight,
+                                                              children: [
+                                                                Align(
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .center,
+                                                                    child: Container(
                                                                         height: 30
                                                                             .v,
                                                                         width: 35
                                                                             .h,
-                                                                        margin: EdgeInsets.only(
-                                                                            top: 8
-                                                                                .v,
-                                                                            bottom: 5
-                                                                                .v),
-                                                                        child: Stack(
-                                                                            alignment:
-                                                                                Alignment.centerRight,
-                                                                            children: [
-                                                                              Align(alignment: Alignment.center, child: Container(height: 30.v, width: 35.h, decoration: BoxDecoration(color: appTheme.blueGray10001.withOpacity(0.5), borderRadius: BorderRadius.circular(17.h)))),
-                                                                              CustomImageView(
-                                                                                  imagePath: ImageConstant.imgArrowLeft,
-                                                                                  height: 18.v,
-                                                                                  width: 19.h,
-                                                                                  alignment: Alignment.centerRight,
-                                                                                  margin: EdgeInsets.only(right: 7.h),
-                                                                                  onTap: () {
-                                                                                    onTapImgArrowLeft(context);
-                                                                                  })
-                                                                            ])),
-                                                                    Padding(
-                                                                        padding: EdgeInsets.only(
-                                                                            left: 13
-                                                                                .h),
-                                                                        child: Text(
-                                                                            "lbl_video"
-                                                                                .tr,
-                                                                            style: TextStyle(
-                                                                                color: appTheme.red900,
-                                                                                fontSize: 32.fSize,
-                                                                                fontFamily: 'Nunito Sans',
-                                                                                fontWeight: FontWeight.w700)))
-                                                                  ])),
-                                                          SizedBox(
-                                                              height: 345.v),
-                                                          Padding(
-                                                              padding: EdgeInsets
-                                                                  .only(
-                                                                      right:
-                                                                          9.h),
-                                                              child: Row(
-                                                                  children: [
-                                                                    Padding(
-                                                                        padding: EdgeInsets.only(
-                                                                            top: 1
-                                                                                .v),
-                                                                        child: Text(
-                                                                            "msg_here_you_will_be3"
-                                                                                .tr,
-                                                                            style: TextStyle(
-                                                                                color: appTheme.blueGray90001.withOpacity(0.6),
-                                                                                fontSize: 16.fSize,
-                                                                                fontFamily: 'Nunito Sans',
-                                                                                fontWeight: FontWeight.w400))),
-                                                                    Padding(
-                                                                        padding: EdgeInsets.only(
-                                                                            left: 35
-                                                                                .h),
-                                                                        child: Text(
-                                                                            "lbl_0_20"
-                                                                                .tr,
-                                                                            style: TextStyle(
-                                                                                color: appTheme.blueGray90001.withOpacity(0.6),
-                                                                                fontSize: 16.fSize,
-                                                                                fontFamily: 'Nunito Sans',
-                                                                                fontWeight: FontWeight.w300)))
-                                                                  ])),
-                                                          SizedBox(
-                                                              height: 21.v),
-                                                          Row(children: [
-                                                            Padding(
-                                                                padding: EdgeInsets
-                                                                    .only(
-                                                                        top: 1
-                                                                            .v),
-                                                                child: Text(
-                                                                    "msg_here_you_will_be3"
-                                                                        .tr,
-                                                                    style: TextStyle(
-                                                                        color: appTheme
-                                                                            .blueGray90001
-                                                                            .withOpacity(
-                                                                                0.6),
-                                                                        fontSize: 16
-                                                                            .fSize,
-                                                                        fontFamily:
-                                                                            'Nunito Sans',
-                                                                        fontWeight:
-                                                                            FontWeight.w400))),
-                                                            Padding(
-                                                                padding: EdgeInsets
-                                                                    .only(
-                                                                        left: 36
+                                                                        decoration: BoxDecoration(
+                                                                            color:
+                                                                                appTheme.blueGray10001.withOpacity(0.5),
+                                                                            borderRadius: BorderRadius.circular(17.h)))),
+                                                                CustomImageView(
+                                                                    imagePath:
+                                                                        ImageConstant
+                                                                            .imgArrowLeft,
+                                                                    height:
+                                                                        18.v,
+                                                                    width: 19.h,
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerRight,
+                                                                    margin: EdgeInsets.only(
+                                                                        right: 7
                                                                             .h),
-                                                                child: Text(
-                                                                    "lbl_10_20"
-                                                                        .tr,
-                                                                    style: TextStyle(
-                                                                        color: appTheme
-                                                                            .blueGray90001
-                                                                            .withOpacity(
-                                                                                0.6),
-                                                                        fontSize: 16
-                                                                            .fSize,
-                                                                        fontFamily:
-                                                                            'Nunito Sans',
-                                                                        fontWeight:
-                                                                            FontWeight.w300)))
-                                                          ]),
-                                                          SizedBox(
-                                                              height: 26.v),
-                                                          Text("msg_here_you_will_be2".tr,
+                                                                    onTap: () {
+                                                                      onTapImgArrowLeft(
+                                                                          context);
+                                                                    })
+                                                              ])),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  left: 13.h),
+                                                          child: Text(
+                                                              "lbl_video".tr,
+                                                              style: TextStyle(
+                                                                  color: appTheme
+                                                                      .red900,
+                                                                  fontSize:
+                                                                      32.fSize,
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w700)))
+                                                    ])),
+                                                SizedBox(height: 345.v),
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 9.h),
+                                                    child: Row(children: [
+                                                      Expanded(
+                                                          child: Text(
+                                                              "msg_here_you_will_be3"
+                                                                  .tr,
                                                               style: TextStyle(
                                                                   color: appTheme
                                                                       .blueGray90001
@@ -208,94 +149,144 @@ class VideoPageTwoScreenState extends State<VideoPageTwoScreen> {
                                                                       'Nunito Sans',
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .w400))
-                                                        ])),
-                                                    Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                left: 18.h,
-                                                                top: 483.v),
-                                                        child: Text(
-                                                            "lbl_30_20".tr,
-                                                            style: TextStyle(
-                                                                color: appTheme
-                                                                    .blueGray90001
-                                                                    .withOpacity(
-                                                                        0.6),
-                                                                fontSize:
-                                                                    16.fSize,
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w300))),
-                                                    Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                left: 19.h),
-                                                        child: SizedBox(
-                                                            height: 506.v,
-                                                            child:
-                                                                VerticalDivider(
-                                                                    width: 5.h,
-                                                                    thickness:
-                                                                        5.v,
-                                                                    indent:
-                                                                        384.h,
-                                                                    endIndent:
-                                                                        6.h)))
-                                                  ]))),
-                                      SizedBox(height: 25.v),
-                                      _buildHereYouWillBeSection(context),
-                                      SizedBox(height: 25.v),
-                                      _buildHereYouWillBeSection1(context),
-                                      SizedBox(height: 39.v),
-                                      _buildPreviousSection(context),
-                                      SizedBox(height: 55.v),
-                                      Align(
-                                          alignment: Alignment.centerRight,
-                                          child: Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 69.h),
-                                              child: Text(
-                                                  "lbl_8_12_sessions".tr,
+                                                                          .w400))),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  left: 35.h),
+                                                          child: Text(
+                                                              "lbl_0_20".tr,
+                                                              style: TextStyle(
+                                                                  color: appTheme
+                                                                      .blueGray90001
+                                                                      .withOpacity(
+                                                                          0.6),
+                                                                  fontSize:
+                                                                      16.fSize,
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w300)))
+                                                    ])),
+                                                SizedBox(height: 21.v),
+                                                Row(children: [
+                                                  Expanded(
+                                                      child: Text(
+                                                          "msg_here_you_will_be3"
+                                                              .tr,
+                                                          style: TextStyle(
+                                                              color: appTheme
+                                                                  .blueGray90001
+                                                                  .withOpacity(
+                                                                      0.6),
+                                                              fontSize:
+                                                                  16.fSize,
+                                                              fontFamily:
+                                                                  'Nunito Sans',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400))),
+                                                  Padding(
+                                                      padding: EdgeInsets.only(
+                                                          left: 36.h),
+                                                      child: Text(
+                                                          "lbl_10_20".tr,
+                                                          style: TextStyle(
+                                                              color: appTheme
+                                                                  .blueGray90001
+                                                                  .withOpacity(
+                                                                      0.6),
+                                                              fontSize:
+                                                                  16.fSize,
+                                                              fontFamily:
+                                                                  'Nunito Sans',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w300)))
+                                                ]),
+                                                SizedBox(height: 26.v),
+                                                Text("msg_here_you_will_be2".tr,
+                                                    style: TextStyle(
+                                                        color: appTheme
+                                                            .blueGray90001
+                                                            .withOpacity(0.6),
+                                                        fontSize: 16.fSize,
+                                                        fontFamily:
+                                                            'Nunito Sans',
+                                                        fontWeight:
+                                                            FontWeight.w400))
+                                              ])),
+                                          Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 18.h, top: 483.v),
+                                              child: Text("lbl_30_20".tr,
                                                   style: TextStyle(
                                                       color: appTheme
                                                           .blueGray90001
                                                           .withOpacity(0.6),
-                                                      fontSize: 12.fSize,
+                                                      fontSize: 16.fSize,
                                                       fontFamily: 'Nunito Sans',
                                                       fontWeight:
-                                                          FontWeight.w400)))),
-                                      SizedBox(height: 24.v)
-                                    ]))),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgComponent3Red90002,
-                            height: 96.v,
-                            width: 77.h,
-                            alignment: Alignment.topRight,
-                            margin: EdgeInsets.only(right: 141.h)),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgPlus,
-                            height: 104.v,
-                            width: 76.h,
-                            alignment: Alignment.centerRight),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgRectangle5,
-                            height: 241.v,
-                            width: 404.h,
-                            radius: BorderRadius.circular(10.h),
-                            alignment: Alignment.topCenter,
-                            margin: EdgeInsets.only(top: 191.v)),
-                        _buildView(context)
-                      ])),
-                  SizedBox(height: 165.v),
-                  CustomImageView(
-                      imagePath: ImageConstant.imgRectangle114,
-                      height: 99.v,
-                      width: 418.h)
-                ]))),
-            bottomNavigationBar: _buildBottomBarSection(context)));
+                                                          FontWeight.w300))),
+                                          // Padding(
+                                          //     padding: EdgeInsets.only(
+                                          //         left: 19.h),
+                                          //     child: SizedBox(
+                                          //         height: 506.v,
+                                          //         child: VerticalDivider(
+                                          //             width: 5.h,
+                                          //             thickness: 5.v,
+                                          //             indent: 384.h,
+                                          //             endIndent: 6.h)))
+                                        ]))),
+                            SizedBox(height: 25.v),
+                            _buildHereYouWillBeSection(context),
+                            SizedBox(height: 25.v),
+                            _buildHereYouWillBeSection1(context),
+                            SizedBox(height: 39.v),
+                            _buildPreviousSection(context),
+                            SizedBox(height: 55.v),
+                            Align(
+                                alignment: Alignment.centerRight,
+                                child: Padding(
+                                    padding: EdgeInsets.only(right: 69.h),
+                                    child: Text("lbl_8_12_sessions".tr,
+                                        style: TextStyle(
+                                            color: appTheme.blueGray90001
+                                                .withOpacity(0.6),
+                                            fontSize: 12.fSize,
+                                            fontFamily: 'Nunito Sans',
+                                            fontWeight: FontWeight.w400)))),
+                            SizedBox(height: 24.v)
+                          ]))),
+              CustomImageView(
+                  imagePath: ImageConstant.imgComponent3Red90002,
+                  height: 96.v,
+                  width: 77.h,
+                  alignment: Alignment.topRight,
+                  margin: EdgeInsets.only(right: 141.h)),
+              CustomImageView(
+                  imagePath: ImageConstant.imgPlus,
+                  height: 104.v,
+                  width: 76.h,
+                  alignment: Alignment.centerRight),
+              CustomImageView(
+                  imagePath: ImageConstant.imgRectangle5,
+                  height: 241.v,
+                  width: 404.h,
+                  radius: BorderRadius.circular(10.h),
+                  alignment: Alignment.topCenter,
+                  margin: EdgeInsets.only(top: 191.v)),
+              _buildView(context)
+            ]),
+            SizedBox(height: 165.v),
+            CustomImageView(
+                imagePath: ImageConstant.imgRectangle114,
+                height: 99.v,
+                width: 418.h)
+          ]))),
+    ));
   }
 
   /// Section Widget
@@ -453,11 +444,6 @@ class VideoPageTwoScreenState extends State<VideoPageTwoScreen> {
                       alignment: Alignment.topRight,
                       margin: EdgeInsets.only(top: 19.v, right: 19.h))
                 ]))));
-  }
-
-  /// Section Widget
-  Widget _buildBottomBarSection(BuildContext context) {
-    return CustomBottomBar(onChanged: (BottomBarEnum type) {});
   }
 
   /// Navigates to the previous screen.

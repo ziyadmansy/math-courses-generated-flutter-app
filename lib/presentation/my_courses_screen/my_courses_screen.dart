@@ -249,7 +249,9 @@ class MyCoursesScreenState extends State<MyCoursesScreen> {
                   padding: EdgeInsets.only(left: 9.h),
                   child: _buildHereYouWillBeSection(context,
                       text: "msg_here_you_will_be2".tr,
-                      continueVar: "lbl_continue".tr)),
+                      continueVar: "lbl_continue".tr, onTapContinue: () {
+                    onTapContinue(context);
+                  })),
               Align(
                   alignment: Alignment.centerRight,
                   child: Padding(
@@ -435,6 +437,8 @@ class MyCoursesScreenState extends State<MyCoursesScreen> {
   }
 
   onTapContinue(BuildContext context) {
-    // TODO: implement Actions
+    NavigatorService.pushNamed(
+      AppRoutes.myCoursesSessionsPage,
+    );
   }
 }

@@ -154,110 +154,123 @@ class MyCoursesSessionsPageState extends State<MyCoursesSessionsPage> {
                     height: 93.v,
                     width: 86.h,
                     alignment: Alignment.topRight),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                  child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: SizedBox(
-                          height: 154.v,
-                          child:
-                              Stack(alignment: Alignment.topRight, children: [
-                            Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 33.h, vertical: 23.v),
-                                    decoration: AppDecoration.outlinePrimary1
-                                        .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder50),
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          SizedBox(height: 9.v),
-                                          Text("lbl_session_1".tr,
+                GestureDetector(
+                  onTap: () {
+                    NavigatorService.pushNamed(
+                      AppRoutes.myCoursesPartsScreen,
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: SizedBox(
+                            height: 154.v,
+                            child:
+                                Stack(alignment: Alignment.topRight, children: [
+                              Align(
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 33.h, vertical: 23.v),
+                                      decoration: AppDecoration.outlinePrimary1
+                                          .copyWith(
+                                              borderRadius: BorderRadiusStyle
+                                                  .roundedBorder50),
+                                      child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            SizedBox(height: 9.v),
+                                            Text("lbl_session_1".tr,
+                                                style: TextStyle(
+                                                    color:
+                                                        appTheme.blueGray90001,
+                                                    fontSize: 26.fSize,
+                                                    fontFamily: 'Nunito Sans',
+                                                    fontWeight:
+                                                        FontWeight.w600)),
+                                            SizedBox(height: 7.v),
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    right: 20.h),
+                                                child: Row(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Expanded(
+                                                          child: Text(
+                                                              "msg_here_you_will_be2"
+                                                                  .tr,
+                                                              maxLines: 2,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              style: TextStyle(
+                                                                  color: appTheme
+                                                                      .blueGray90001
+                                                                      .withOpacity(
+                                                                          0.6),
+                                                                  fontSize:
+                                                                      16.fSize,
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w300))),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  left: 62.h,
+                                                                  top: 37.v),
+                                                          child: Text(
+                                                              "lbl_0_5_parts"
+                                                                  .tr,
+                                                              style: TextStyle(
+                                                                  color: appTheme
+                                                                      .blueGray90001
+                                                                      .withOpacity(
+                                                                          0.6),
+                                                                  fontSize:
+                                                                      12.fSize,
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400)))
+                                                    ]))
+                                          ]))),
+                              Align(
+                                  alignment: Alignment.topRight,
+                                  child: GestureDetector(
+                                      onTap: () {
+                                        onTapTxtDownload(context);
+                                      },
+                                      child: Container(
+                                          margin: EdgeInsets.only(
+                                              top: 33.v, right: 21.h),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 11.h, vertical: 2.v),
+                                          decoration: AppDecoration
+                                              .outlinePrimary6
+                                              .copyWith(
+                                                  borderRadius:
+                                                      BorderRadiusStyle
+                                                          .circleBorder14),
+                                          child: Text("lbl_download".tr,
                                               style: TextStyle(
-                                                  color: appTheme.blueGray90001,
-                                                  fontSize: 26.fSize,
+                                                  color:
+                                                      theme.colorScheme.onError,
+                                                  fontSize: 16.fSize,
                                                   fontFamily: 'Nunito Sans',
-                                                  fontWeight: FontWeight.w600)),
-                                          SizedBox(height: 7.v),
-                                          Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 20.h),
-                                              child: Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Expanded(
-                                                        child: Text(
-                                                            "msg_here_you_will_be2"
-                                                                .tr,
-                                                            maxLines: 2,
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
-                                                            style: TextStyle(
-                                                                color: appTheme
-                                                                    .blueGray90001
-                                                                    .withOpacity(
-                                                                        0.6),
-                                                                fontSize:
-                                                                    16.fSize,
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w300))),
-                                                    Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                left: 62.h,
-                                                                top: 37.v),
-                                                        child: Text(
-                                                            "lbl_0_5_parts".tr,
-                                                            style: TextStyle(
-                                                                color: appTheme
-                                                                    .blueGray90001
-                                                                    .withOpacity(
-                                                                        0.6),
-                                                                fontSize:
-                                                                    12.fSize,
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w400)))
-                                                  ]))
-                                        ]))),
-                            Align(
-                                alignment: Alignment.topRight,
-                                child: GestureDetector(
-                                    onTap: () {
-                                      onTapTxtDownload(context);
-                                    },
-                                    child: Container(
-                                        margin: EdgeInsets.only(
-                                            top: 33.v, right: 21.h),
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 11.h, vertical: 2.v),
-                                        decoration: AppDecoration
-                                            .outlinePrimary6
-                                            .copyWith(
-                                                borderRadius: BorderRadiusStyle
-                                                    .circleBorder14),
-                                        child: Text("lbl_download".tr,
-                                            style: TextStyle(
-                                                color:
-                                                    theme.colorScheme.onError,
-                                                fontSize: 16.fSize,
-                                                fontFamily: 'Nunito Sans',
-                                                fontWeight: FontWeight.w700)))))
-                          ]))),
+                                                  fontWeight:
+                                                      FontWeight.w700)))))
+                            ]))),
+                  ),
                 )
               ]))
         ]));

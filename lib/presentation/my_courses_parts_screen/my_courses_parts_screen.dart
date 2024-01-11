@@ -31,126 +31,100 @@ class MyCoursesPartsScreenState extends State<MyCoursesPartsScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SizedBox(
-                width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    child: Column(children: [
-                  SizedBox(
-                      height: SizeUtils.height,
-                      width: double.maxFinite,
-                      child: Stack(alignment: Alignment.topLeft, children: [
-                        Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 24.h, vertical: 33.v),
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            ImageConstant.imgGroup164),
-                                        fit: BoxFit.cover)),
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      _buildWelcomeSection(context),
-                                      SizedBox(height: 33.v),
-                                      Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Padding(
-                                              padding:
-                                                  EdgeInsets.only(left: 29.h),
-                                              child: Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Container(
-                                                        height: 30.v,
-                                                        width: 35.h,
-                                                        margin: EdgeInsets.only(
-                                                            top: 5.v,
-                                                            bottom: 8.v),
-                                                        child: Stack(
-                                                            alignment: Alignment
-                                                                .centerRight,
-                                                            children: [
-                                                              Align(
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .center,
-                                                                  child: Container(
-                                                                      height:
-                                                                          30.v,
-                                                                      width:
-                                                                          35.h,
-                                                                      decoration: BoxDecoration(
-                                                                          color: appTheme.blueGray10001.withOpacity(
-                                                                              0.5),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(17.h)))),
-                                                              CustomImageView(
-                                                                  imagePath:
-                                                                      ImageConstant
-                                                                          .imgArrowLeft,
-                                                                  height: 18.v,
-                                                                  width: 19.h,
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerRight,
-                                                                  margin: EdgeInsets
-                                                                      .only(
-                                                                          right:
-                                                                              7.h),
-                                                                  onTap: () {
-                                                                    onTapImgArrowLeft(
-                                                                        context);
-                                                                  })
-                                                            ])),
-                                                    Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                left: 19.h),
-                                                        child: Text(
-                                                            "lbl_parts".tr,
-                                                            style: TextStyle(
-                                                                color: appTheme
-                                                                    .red900,
-                                                                fontSize:
-                                                                    32.fSize,
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w700)))
-                                                  ]))),
-                                      SizedBox(height: 40.v),
-                                      _buildVideoSection(context),
-                                      SizedBox(height: 25.v),
-                                      _buildMockExamSection(context),
-                                      SizedBox(height: 28.v),
-                                      _buildLiveSessionSection(context),
-                                      SizedBox(height: 28.v),
-                                      _buildDownloadSection(context)
-                                    ]))),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgComponent7,
-                            height: 79.v,
-                            width: 52.h,
-                            alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(top: 91.v)),
-                        CustomImageView(
-                            imagePath: ImageConstant.imgUserRed90003,
-                            height: 93.v,
-                            width: 86.h,
-                            alignment: Alignment.topRight,
-                            margin: EdgeInsets.only(top: 143.v))
-                      ])),
-                  SizedBox(height: 165.v),
-                  CustomImageView(
-                      imagePath: ImageConstant.imgRectangle1199x418,
-                      height: 99.v,
-                      width: 418.h)
-                ]))),
-            bottomNavigationBar: _buildBottomBarSection(context)));
+      body: SingleChildScrollView(
+          child: Column(children: [
+        Stack(alignment: Alignment.topLeft, children: [
+          Align(
+              alignment: Alignment.center,
+              child: Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 24.h, vertical: 33.v),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(ImageConstant.imgGroup164),
+                          fit: BoxFit.cover)),
+                  child: Column(mainAxisSize: MainAxisSize.min, children: [
+                    _buildWelcomeSection(context),
+                    SizedBox(height: 33.v),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                            padding: EdgeInsets.only(left: 29.h),
+                            child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      height: 30.v,
+                                      width: 35.h,
+                                      margin: EdgeInsets.only(
+                                          top: 5.v, bottom: 8.v),
+                                      child: Stack(
+                                          alignment: Alignment.centerRight,
+                                          children: [
+                                            Align(
+                                                alignment: Alignment.center,
+                                                child: Container(
+                                                    height: 30.v,
+                                                    width: 35.h,
+                                                    decoration: BoxDecoration(
+                                                        color: appTheme
+                                                            .blueGray10001
+                                                            .withOpacity(0.5),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                                    17.h)))),
+                                            CustomImageView(
+                                                imagePath:
+                                                    ImageConstant.imgArrowLeft,
+                                                height: 18.v,
+                                                width: 19.h,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                margin:
+                                                    EdgeInsets.only(right: 7.h),
+                                                onTap: () {
+                                                  onTapImgArrowLeft(context);
+                                                })
+                                          ])),
+                                  Padding(
+                                      padding: EdgeInsets.only(left: 19.h),
+                                      child: Text("lbl_parts".tr,
+                                          style: TextStyle(
+                                              color: appTheme.red900,
+                                              fontSize: 32.fSize,
+                                              fontFamily: 'Nunito Sans',
+                                              fontWeight: FontWeight.w700)))
+                                ]))),
+                    SizedBox(height: 40.v),
+                    _buildVideoSection(context),
+                    SizedBox(height: 25.v),
+                    _buildMockExamSection(context),
+                    SizedBox(height: 28.v),
+                    _buildLiveSessionSection(context),
+                    SizedBox(height: 28.v),
+                    _buildDownloadSection(context)
+                  ]))),
+          CustomImageView(
+              imagePath: ImageConstant.imgComponent7,
+              height: 79.v,
+              width: 52.h,
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(top: 91.v)),
+          CustomImageView(
+              imagePath: ImageConstant.imgUserRed90003,
+              height: 93.v,
+              width: 86.h,
+              alignment: Alignment.topRight,
+              margin: EdgeInsets.only(top: 143.v))
+        ]),
+        SizedBox(height: 165.v),
+        CustomImageView(
+            imagePath: ImageConstant.imgRectangle1199x418,
+            height: 99.v,
+            width: 418.h)
+      ])),
+    ));
   }
 
   /// Section Widget
@@ -248,8 +222,7 @@ class MyCoursesPartsScreenState extends State<MyCoursesPartsScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                            width: 177.h,
+                        Expanded(
                             child: Text("msg_here_you_will_be".tr,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
@@ -454,9 +427,7 @@ class MyCoursesPartsScreenState extends State<MyCoursesPartsScreen> {
                   child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                            width: 177.h,
-                            margin: EdgeInsets.only(bottom: 6.v),
+                        Expanded(
                             child: Text("msg_here_you_will_be2".tr,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
@@ -477,11 +448,6 @@ class MyCoursesPartsScreenState extends State<MyCoursesPartsScreen> {
                                     fontWeight: FontWeight.w400)))
                       ]))
             ]));
-  }
-
-  /// Section Widget
-  Widget _buildBottomBarSection(BuildContext context) {
-    return CustomBottomBar(onChanged: (BottomBarEnum type) {});
   }
 
   /// Navigates to the previous screen.
